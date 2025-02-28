@@ -11,12 +11,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // });
     // }
 
-    const msg = "This is a test msg."
+    var msg_field = document.getElementById('hid1');
+    
+    const msg = "This is a test msg.";
+    const fb_link = 'https://www.facebook.com/SQLEstream/';
+    msg_field.value = msg;
 
     // Define the links
     const links = {
-        'Facebook Page': 'https://www.facebook.com/SQLEstream/',
-        // 'Facebook': 'https://www.facebook.com/sharer/sharer.php?quote=${encodeURIComponent(msg)}&u=https://www.facebook.com/SQLEstream/',
+        'Facebook Page': fb_link,
+        'Facebook': 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(fb_link) + '%26quote=' + encodeURIComponent(msg),
         'Instagram': 'https://www.instagram.com/sqlestream/?hl=ms',
         'Google review': 'https://search.google.com/local/writereview?placeid=ChIJd904jxpTzDER2KhXom8b_zI',
         'Red note': 'Red note'
@@ -53,13 +57,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     openApp();
                     setTimeout(fallbackToStore, 700);
                 }
-                /*else if (platform == 'Facebook') {
-                    FB.ui({
-                        method: 'share',
-                        href: links['Facebook Page'],
-                        //quote: msg, 
-                    }, function(response){});
-                }*/
+                else if (links[platform] == 'Facebook') {
+                    //msg_field.select();
+                    //msg_field.setSelectionRange(0, 99999); 
+                    navigator.clipboard.writeText(msg);
+                    //alert("Copied the text: " + msg_field.value);
+                    window.open(links[platform], '_blank');
+                }
 
                 else{
                    window.open(links[platform], '_blank');

@@ -20,6 +20,10 @@ body {
     width: 100%;
 }
 
+#hid1 {
+    display: none;
+}
+
 h1 {
     font-size: 28px;
     margin-bottom: 30px;
