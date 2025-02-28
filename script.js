@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // });
     // }
 
-    var msg_field = document.getElementById('hid1');
+    
     
     const msg = "This is a test msg.";
     const fb_link = 'https://www.facebook.com/SQLEstream/';
@@ -58,10 +58,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     setTimeout(fallbackToStore, 700);
                 }
                 else if (links[platform] == 'Facebook') {
-                    //msg_field.select();
-                    //msg_field.setSelectionRange(0, 99999); 
-                    navigator.clipboard.writeText(msg);
-                    //alert("Copied the text: " + msg_field.value);
+                    var msg_field = document.getElementById('hid1');
+                    msg_field.select();
+                    msg_field.setSelectionRange(0, 99999); 
+                    await navigator.clipboard.writeText(msg);
+                    alert("Copied the text: " + msg_field.value);
                     window.open(links[platform], '_blank');
                 }
 
