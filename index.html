@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId            : '1670589080236561',
+                xfbml            : true,
+                version          : 'v22.0'
+            });
+        };
+    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 </head>
 <body>
     <div class="container">
@@ -81,11 +91,22 @@
                     <img src="Image/wifi_logo.svg" alt="wifi logo">
                 </div>
                 <p>Connect to</p>
-                <h3>WI-FI</h3>
-                <button class="action-button">Connect</button>
+                <h3>Facebook</h3>
+                <button class="action-button" id="fb_test">Connect</button>
             </div>
         </div>
     </div>
     <script src="script.js"></script>
+    <script>
+        document.getElementById('fb_test').onclick = function() {
+            FB.ui({
+                display: 'popup',
+                method: 'share',
+                href: 'https://www.facebook.com/SQLEstream/',
+                redirect_uri: 'https://www.facebook.com/SQLEstream/',
+            }, function(response){});
+}
+</script>
+
 </body>
 </html>

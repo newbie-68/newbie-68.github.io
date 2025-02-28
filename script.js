@@ -11,12 +11,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // });
     // }
 
-
+    const msg = "This is a test msg."
 
     // Define the links
     const links = {
-        'Facebook': 'https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/SQLEstream/',
         'Facebook Page': 'https://www.facebook.com/SQLEstream/',
+        // 'Facebook': 'https://www.facebook.com/sharer/sharer.php?quote=${encodeURIComponent(msg)}&u=https://www.facebook.com/SQLEstream/',
         'Instagram': 'https://www.instagram.com/sqlestream/?hl=ms',
         'Google review': 'https://search.google.com/local/writereview?placeid=ChIJd904jxpTzDER2KhXom8b_zI',
         'Red note': 'Red note'
@@ -53,6 +53,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     openApp();
                     setTimeout(fallbackToStore, 700);
                 }
+                /*else if (platform == 'Facebook') {
+                    FB.ui({
+                        method: 'share',
+                        href: links['Facebook Page'],
+                        //quote: msg, 
+                    }, function(response){});
+                }*/
+
                 else{
                    window.open(links[platform], '_blank');
                 }
