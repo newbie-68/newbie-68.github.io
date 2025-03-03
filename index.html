@@ -95,10 +95,10 @@
                 <p>Connect to</p>
                 <h3>Test</h3>
                 <button class="action-button" id="fb_test">Connect</button>
-                <a href="intent://com.android.chrome#Intent;action=android.intent.action.SEND;type=text/plain;S.android.intent.extra.TEXT='
+                <a href="intent://send/#Intent;action=android.intent.action.SEND;type=text/plain;S.android.intent.extra.TEXT='
                         + 'TESTSSAD' 
-                        + ';S.android.intent.extra.SUBJECT=Like this software!;S.android.intent.extra.STREAM=' 
-                        + img_link 
+                        + ';S.android.intent.extra.SUBJECT=Like%20this%20software;S.android.intent.extra.STREAM=' 
+                        +  encodeURIComponent('https://cdn.sql.com.my/wp-content/uploads/2025/02/2025-LHDN-E-Invoice-Seminar-Poster.jpg')
                     + ';S.browser_fallback_url=https%3A%2F%2Fgoogle.com;end">Tap Here TEST</a>
             </div>
         </div>
