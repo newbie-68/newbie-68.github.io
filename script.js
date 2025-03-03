@@ -86,7 +86,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Test sharing
                 var pushed_uri = encodeURIComponent(red_link);
                 const img_link = encodeURIComponent('https://cdn.sql.com.my/wp-content/uploads/2025/02/2025-LHDN-E-Invoice-Seminar-Poster.jpg');
-                window.open('intent:#Intent;action=android.intent.action.SEND;type=text/plain;S.android.intent.extra.TEXT=' + pushed_uri + ';S.android.intent.extra.SUBJECT=Like this software!;S.android.intent.extra.STREAM=' + img_link + ';end', '_blank');
+                try{
+                    document.location = 'intent://#Intent;action=android.intent.action.SEND;type=text/plain;S.android.intent.extra.TEXT=' + pushed_uri + ';S.android.intent.extra.SUBJECT=Like this software!;S.android.intent.extra.STREAM=' + img_link + ';end', '_blank';
+                    } catch (error) {
+                        console.error(error.message);
+                    }
+            
+                
             }
             else {
                 const actionType = this.textContent;
