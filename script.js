@@ -84,14 +84,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     alert("Copied the text: " + msg_field.value);*/
 
                 // Test sharing
-                var pushed_uri = encodeURIComponent(red_link);
+                /*var pushed_uri = encodeURIComponent(red_link);
                 const img_link = encodeURIComponent('https://cdn.sql.com.my/wp-content/uploads/2025/02/2025-LHDN-E-Invoice-Seminar-Poster.jpg');
                 try{
-                    document.location = 'intent://#Intent;action=android.intent.action.SEND;type=text/plain;S.android.intent.extra.TEXT=' + pushed_uri + ';S.android.intent.extra.SUBJECT=Like this software!;S.android.intent.extra.STREAM=' + img_link + ';end', '_blank';
+                    document.location = 'intent://#Intent;action=android.intent.action.SEND;type=text/plain;S.android.intent.extra.TEXT=' + 'TESTSSAD' + ';S.android.intent.extra.SUBJECT=Like this software!;S.android.intent.extra.STREAM=' + img_link + ';end', '_blank';
                     } catch (error) {
                         console.error(error.message);
                     }
-            
+            */
                 
             }
             else {
