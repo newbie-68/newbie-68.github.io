@@ -82,20 +82,21 @@ document.addEventListener("DOMContentLoaded", function () {
                         console.error(error.message);
                     }
                     alert("Copied the text: " + msg_field.value);*/
-                   window.location = 'xhsdiscover://post_note';
+                   
                 // Test sharing
-                /*var pushed_uri = encodeURIComponent(red_link);
+                var pushed_uri = encodeURIComponent(red_link);
                 const img_link = encodeURIComponent('https://cdn.sql.com.my/wp-content/uploads/2025/02/2025-LHDN-E-Invoice-Seminar-Poster.jpg');
-                try{
+                /*try{
                     document.location = 'intent://#Intent;action=android.intent.action.SEND;type=text/plain;S.android.intent.extra.TEXT=' + 'TESTSSAD' + ';S.android.intent.extra.SUBJECT=Like this software!;S.android.intent.extra.STREAM=' + img_link + ';end', '_blank';
                     } catch (error) {
                         console.error(error.message);
                     }
                 //xhsdiscover://user/65164c2e000000002302441a
 
+
                 
             */
-                var intent = Intent() 
+                window.location = `xhsdiscover://post_note?title='Test'&img=` + img_link;
                 
             }
             else {
