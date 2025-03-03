@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         console.error(error.message);
                     }
                     alert("Copied the text: " + msg_field.value);*/
-
+                   window.location = 'xhsdiscover://post_note';
                 // Test sharing
                 /*var pushed_uri = encodeURIComponent(red_link);
                 const img_link = encodeURIComponent('https://cdn.sql.com.my/wp-content/uploads/2025/02/2025-LHDN-E-Invoice-Seminar-Poster.jpg');
@@ -91,7 +91,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     } catch (error) {
                         console.error(error.message);
                     }
+                //xhsdiscover://user/65164c2e000000002302441a
+
+                
             */
+                var intent = Intent() 
                 
             }
             else {
