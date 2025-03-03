@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 
             */
-                window.location = `xhsdiscover://post_note?title='Test'&img=` + img_link;
+                window.location = `xhsdiscover://item`k;
                 
             }
             else {
