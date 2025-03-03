@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var msg_field = document.getElementById('hid1');
     const msg = "This is a test msg.";
     const fb_link = 'https://www.facebook.com/SQLEstream/';
+    const red_link = 'https://www.xiaohongshu.com/user/profile/65164c2e000000002302441a';
     msg_field.value = msg;
 
     // Define the links
@@ -23,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         'Facebook': 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(fb_link) + '%26quote=' + encodeURIComponent(msg),
         'Instagram': 'https://www.instagram.com/sqlestream/?hl=ms',
         'Google review': 'https://search.google.com/local/writereview?placeid=ChIJd904jxpTzDER2KhXom8b_zI',
-        'Red note': 'Red note'
+        'Red note': red_link,
     };
 
     // Add active state for touch devices
@@ -57,15 +58,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     openApp();
                     setTimeout(fallbackToStore, 700);
                 }
-                else if (links[platform] == 'Facebook') {
+                /*else if (links[platform] == 'Test') {
                     try {
                         navigator.clipboard.writeText("YouclickedFB");
                     } catch (error) {
                         console.error(error.message);
                     }
                     alert("Copied the text: " + msg_field.value);
-                    window.open(links[platform], '_blank');
-                }
+                    //window.open(links[platform], '_blank');
+                }*/
                 else if (links[platform] == 'TikTok') {
                     window.xhs.share({ title: 'TestShareTitle' }, {});
                 }
@@ -73,7 +74,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 else{
                    window.open(links[platform], '_blank');
                 }
-            } else {
+            } else if (platform == 'Test') {
+                // It works!!!
+                /*try {
+                        navigator.clipboard.writeText("YouclickedFB");
+                    } catch (error) {
+                        console.error(error.message);
+                    }
+                    alert("Copied the text: " + msg_field.value);*/
+
+                // Test sharing
+                var pushed_uri = encodeURIComponent(red_link);
+                const img_link = encodeURIComponent('https://cdn.sql.com.my/wp-content/uploads/2025/02/2025-LHDN-E-Invoice-Seminar-Poster.jpg');
+                window.open('intent:#Intent;action=android.intent.action.SEND;type=text/plain;S.android.intent.extra.TEXT=' + pushed_uri + ';S.android.intent.extra.SUBJECT=Like this software!;S.android.intent.extra.STREAM=' + img_link + ';end', '_blank');
+            }
+            else {
                 const actionType = this.textContent;
                 alert(`You are about to ${actionType.toLowerCase()} on ${platform}!`);
                 // Here you would implement the functionality for other platforms
